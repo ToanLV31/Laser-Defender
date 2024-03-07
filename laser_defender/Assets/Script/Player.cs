@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Collections;
@@ -16,6 +17,13 @@ public class Player : MonoBehaviour
 
     Vector2 miniBound;
     Vector2 maxiBound;
+
+    Shooter shooter;
+
+    void Awake()
+    {
+        shooter = GetComponent<Shooter>();
+    }
 
 
 
@@ -53,6 +61,14 @@ public class Player : MonoBehaviour
         trans.x = Mathf.Clamp(transform.position.x + delta.x, miniBound.x + paddingLeft, maxiBound.x - paddingRight);
         trans.y = Mathf.Clamp(transform.position.y + delta.y, miniBound.y + paddingBottom, maxiBound.y - paddingTop);
         transform.position = trans;
+    }
+
+    void OnFire(InputValue value)
+    {
+        if (shooter != null)
+        {
+            shooter.isFiring = value.isPressed;
+        }
     }
 
 

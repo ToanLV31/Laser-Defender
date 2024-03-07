@@ -18,7 +18,7 @@ public class Health : MonoBehaviour
         {
             Debug.Log("Blood:" + health);
             TakeDamage(damageDealer.GetDamage());
-            damageDealer.Hit();
+            // damageDealer.Hit();
         }
     }
 
