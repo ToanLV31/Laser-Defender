@@ -9,10 +9,10 @@ public class Player : MonoBehaviour
 {
     Vector2 rawInput;
     [SerializeField] float speedPlayer = 6f;
-    [SerializeField] float paddingLeft = 0.5f;
-    [SerializeField] float paddingRight = 0.5f;
-    [SerializeField] float paddingTop = 1f;
-    [SerializeField] float paddingBottom = 1f;
+    [SerializeField] float paddingLeft = 0f;
+    [SerializeField] float paddingRight = 0f;
+    [SerializeField] float paddingTop = 0f;
+    [SerializeField] float paddingBottom = 0f;
 
 
     Vector2 miniBound;

@@ -13,12 +13,12 @@ public class Health : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        DamageDealer damageDealer = GetComponent<DamageDealer>();
+        DamageDealer damageDealer = other.GetComponent<DamageDealer>();
         if (damageDealer != null)
         {
             Debug.Log("Blood:" + health);
             TakeDamage(damageDealer.GetDamage());
-            // damageDealer.Hit();
+            damageDealer.Hit();
         }
     }
 
@@ -30,10 +30,4 @@ public class Health : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-
-
-
-
-
 }

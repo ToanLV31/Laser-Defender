@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4913795409964573468}
   - component: {fileID: 8404717043150627622}
   - component: {fileID: -4034644681544508101}
+  - component: {fileID: -7289647325571102089}
   - component: {fileID: -6671788679263879627}
   - component: {fileID: 5165420437677537955}
   m_Layer: 7
@@ -74,7 +75,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57ba668b1b0e6634e8f81be5d4079af1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 50
+  damage: 25
+--- !u!114 &-7289647325571102089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2551337513839958085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a45b76a4e9828d40bc5e4b99e9a4925, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 4967572467322945748, guid: 0a9ed43e63b731c40bf8c1ce390e5c0b, type: 3}
+  projectileSpeed: 10
+  projectileLifeTime: 5
+  timeBetweenTwoBullet: 1
+  useAI: 1
+  isFiring: 0
 --- !u!50 &-6671788679263879627
 Rigidbody2D:
   serializedVersion: 4

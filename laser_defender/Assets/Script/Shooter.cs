@@ -8,16 +8,18 @@ public class Shooter : MonoBehaviour
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] float projectileSpeed = 10f;
     [SerializeField] float projectileLifeTime = 5f;
+    [SerializeField] float timeBetweenTwoBullet = 0.5f;
 
-    [SerializeField] float timeBetweenTwoBullet = 0.1f;
-
+    [SerializeField] bool useAI;
     public bool isFiring;
-
     Coroutine fireCoroutine;
     // Start is called before the first frame update
     void Start()
     {
-
+        if (useAI)
+        {
+            isFiring = true;
+        }
     }
 
     // Update is called once per frame
@@ -45,14 +47,21 @@ public class Shooter : MonoBehaviour
         while (true)
         {
             Debug.Log(transform.position);
-            GameObject instance = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-            Rigidbody2D rb = instance.GetComponentInChildren<Rigidbody2D>();
+            GameObject instance = Instantiate(projectilePrefab) as GameObject;
+            instance.transform.position = transform.position;
+            instance.transform.rotation = transform.rotation;
+
+            Rigidbody2D rb = instance.GetComponent<Rigidbody2D>();
             if (rb != null)
             {
-                rb.velocity = new Vector2(0f, projectileSpeed);
+                rb.velocity = transform.up * projectileSpeed;
             }
 
             Destroy(instance, projectileLifeTime);
+            if (useAI)
+            {
+                timeBetweenTwoBullet = UnityEngine.Random.Range(0.5f, 1f);
+            }
             yield return new WaitForSeconds(timeBetweenTwoBullet);
         }
     }
