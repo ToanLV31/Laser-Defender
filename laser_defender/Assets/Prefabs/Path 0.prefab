@@ -41,8 +41,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7436047842156691079}
   - component: {fileID: 2094132412794691588}
-  - component: {fileID: -6185381722756216874}
-  - component: {fileID: 2682841573242774947}
   - component: {fileID: 4969141623299859292}
   m_Layer: 0
   m_Name: Path 0
@@ -97,32 +95,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-6185381722756216874
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 642862171520645384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57ba668b1b0e6634e8f81be5d4079af1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 10
---- !u!114 &2682841573242774947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 642862171520645384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 058ac47c1db06064983c839e433a074a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 50
 --- !u!70 &4969141623299859292
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

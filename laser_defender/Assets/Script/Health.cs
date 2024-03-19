@@ -5,6 +5,15 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] int health = 50;
+    [SerializeField] ParticleSystem explosionEffect;
+
+
+    void Start()
+    {
+
+    }
+
+
 
     public int GetHealth()
     {
@@ -18,7 +27,9 @@ public class Health : MonoBehaviour
         {
             Debug.Log("Blood:" + health);
             TakeDamage(damageDealer.GetDamage());
+            PlayHitEffect();
             damageDealer.Hit();
+
         }
     }
 
@@ -29,5 +40,16 @@ public class Health : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+    void PlayHitEffect()
+    {
+
+        if (explosionEffect != null)
+        {
+            ParticleSystem instance = Instantiate(explosionEffect, transform.position, Quaternion.identity);
+            Destroy(instance.gameObject, instance.main.duration + instance.main.startLifetime.constantMax);
+        }
+
+
     }
 }
