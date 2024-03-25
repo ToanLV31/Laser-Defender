@@ -64,6 +64,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 50
   explosionEffect: {fileID: 386565571033007681, guid: a34315fa920af1840ab0b47d6936029f, type: 3}
+  applyShakeCamera: 0
+  isEnemy: 1
 --- !u!114 &-4034644681544508101
 MonoBehaviour:
   m_ObjectHideFlags: 0

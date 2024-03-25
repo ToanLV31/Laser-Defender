@@ -13,6 +13,17 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField][Range(0f, 1f)] float volumeDamage = 1f;
 
 
+
+    private AudioSource audioSource;
+
+
+
+    void Start()
+    {
+    }
+
+
+
     public void PlayShot()
     {
         PlayClip(shot, volumeShot);
@@ -28,6 +39,17 @@ public class AudioPlayer : MonoBehaviour
         if (audioClip != null)
         {
             AudioSource.PlayClipAtPoint(audioClip, Camera.main.transform.position, volume);
+        }
+    }
+
+    public void PlayBackGroundAudio(AudioClip audioClip, float volume)
+    {
+        if (audioClip != null)
+        {
+            audioSource.clip = audioClip;
+            audioSource.volume = volume;
+            audioSource.loop = true;
+            audioSource.Play();
         }
     }
 

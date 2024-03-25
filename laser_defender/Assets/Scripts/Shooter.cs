@@ -36,7 +36,7 @@ public class Shooter : MonoBehaviour
         }
         else if (!isFiring && fireCoroutine != null)
         {
-            Debug.Log("stop");
+            // Debug.Log("stop");
             StopCoroutine(fireCoroutine);
             fireCoroutine = null;
         }
@@ -46,7 +46,7 @@ public class Shooter : MonoBehaviour
     {
         while (true)
         {
-            Debug.Log(transform.position);
+            // Debug.Log(transform.position);
             GameObject instance = Instantiate(projectilePrefab) as GameObject;
             instance.transform.position = transform.position;
             instance.transform.rotation = transform.rotation;
