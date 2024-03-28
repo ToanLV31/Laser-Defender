@@ -10,6 +10,7 @@ public class Health : MonoBehaviour
 {
     [SerializeField] int health = 50;
 
+
     [SerializeField] int score = 50;
     [SerializeField] ParticleSystem explosionEffect;
 
@@ -23,21 +24,29 @@ public class Health : MonoBehaviour
     AudioPlayer audioPlayer;
     ScoreKeeper scoreKeeper;
 
-    UIControler ui;
+
 
     void Awake()
     {
         cameraShake = Camera.main.GetComponent<CameraShake>();
         audioPlayer = FindObjectOfType<AudioPlayer>();
         scoreKeeper = FindObjectOfType<ScoreKeeper>();
-        ui = FindObjectOfType<UIControler>();
+
     }
 
 
     void Start()
     {
-        ui.SetScoreText("Score: " + scoreKeeper.GetCurrentScore());
+
+
     }
+
+    void Update()
+    {
+
+    }
+
+
 
 
 
@@ -45,7 +54,7 @@ public class Health : MonoBehaviour
 
     public int GetHealth()
     {
-        return this.GetHealth();
+        return this.health;
     }
 
     public bool GetIsEnemy()
@@ -87,6 +96,7 @@ public class Health : MonoBehaviour
     void TakeDamage(int damage)
     {
         health -= damage;
+        // ui.SetHeathSlide((float)currentHealth / 10);
         if (health <= 0)
         {
 
@@ -99,13 +109,11 @@ public class Health : MonoBehaviour
         if (isEnemy)
         {
             scoreKeeper.IncreaseCurrentScore(score);
-            ui.SetScoreText("Score: " + scoreKeeper.GetCurrentScore());
             Debug.Log("Điểm số hiện tại" + scoreKeeper.GetCurrentScore());
         }
         else
         {
             scoreKeeper.ResetScore();
-            ui.SetScoreText("Score: " + scoreKeeper.GetCurrentScore());
             Debug.Log("Điểm số sau khi reset" + scoreKeeper.GetCurrentScore());
         }
         Destroy(gameObject);

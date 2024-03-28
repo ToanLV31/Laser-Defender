@@ -1,33 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.UIElements.Experimental;
 
 public class UIControler : MonoBehaviour
 {
-    TextMeshProUGUI textScore;
+    [Header("health")]
+    [SerializeField] Slider healthSlider;
+    [SerializeField] Health playerHealth;
 
-    void Awake()
-    {
-        textScore = GetComponent<TextMeshProUGUI>();
-    }
+    [Header("soccer")]
+    [SerializeField] TextMeshProUGUI scoreText;
 
-    // Start is called before the first frame update
+    ScoreKeeper scoreKeeper;
+
     void Start()
     {
-
+        scoreKeeper = FindObjectOfType<ScoreKeeper>();
+        healthSlider.maxValue = playerHealth.GetHealth();
     }
 
-    // Update is called once per frame
     void Update()
     {
-
+        SetScoreText();
+        SetSliderValue();
     }
 
-    public void SetScoreText(string text)
+    void SetScoreText()
     {
-        this.textScore.text = text;
+        scoreText.text = scoreKeeper.GetCurrentScore().ToString();
     }
+
+    void SetSliderValue()
+    {
+        healthSlider.value = playerHealth.GetHealth();
+    }
+
+
+
 
 
 }
