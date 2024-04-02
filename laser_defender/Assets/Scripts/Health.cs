@@ -24,6 +24,8 @@ public class Health : MonoBehaviour
     AudioPlayer audioPlayer;
     ScoreKeeper scoreKeeper;
 
+    ScreenController screenController;
+
 
 
     void Awake()
@@ -31,6 +33,7 @@ public class Health : MonoBehaviour
         cameraShake = Camera.main.GetComponent<CameraShake>();
         audioPlayer = FindObjectOfType<AudioPlayer>();
         scoreKeeper = FindObjectOfType<ScoreKeeper>();
+        screenController = FindObjectOfType<ScreenController>();
 
     }
 
@@ -113,7 +116,7 @@ public class Health : MonoBehaviour
         }
         else
         {
-            scoreKeeper.ResetScore();
+            screenController.LoadGameOverScene();
             Debug.Log("Điểm số sau khi reset" + scoreKeeper.GetCurrentScore());
         }
         Destroy(gameObject);
