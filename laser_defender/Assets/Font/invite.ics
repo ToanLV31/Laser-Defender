@@ -1,0 +1,59 @@
+BEGIN:VCALENDAR
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:REQUEST
+BEGIN:VTIMEZONE
+TZID:Asia/Ho_Chi_Minh
+X-LIC-LOCATION:Asia/Ho_Chi_Minh
+BEGIN:STANDARD
+TZOFFSETFROM:+0700
+TZOFFSETTO:+0700
+TZNAME:+07
+DTSTART:19700101T000000
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Ho_Chi_Minh:20240403T200000
+DTEND;TZID=Asia/Ho_Chi_Minh:20240403T220000
+DTSTAMP:20240403T040029Z
+ORGANIZER:mailto:huyen.dinh@flyingwhales.io
+UID:52s8imtr7cjl2hpbsegq11gsh1@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRUE
+ ;X-NUM-GUESTS=0:mailto:huyen.dinh@flyingwhales.io
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE;CN=dinhthanh1122022@gmail.com;X-NUM-GUESTS=0:mailto:dinhthanh1122022@g
+ mail.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE;CN=trnqngtuan308@gmail.com;X-NUM-GUESTS=0:mailto:trnqngtuan308@gmail.c
+ om
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE;CN=dinhthichinhutc@gmail.com;X-NUM-GUESTS=0:mailto:dinhthichinhutc@gma
+ il.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE;CN=toanlevan0123@gmail.com;X-NUM-GUESTS=0:mailto:toanlevan0123@gmail.c
+ om
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE;CN=tranthanhdat.khmt@gmail.com;X-NUM-GUESTS=0:mailto:tranthanhdat.khmt
+ @gmail.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE;CN=quangtruong2511.evr@gmail.com;X-NUM-GUESTS=0:mailto:quangtruong2511
+ .evr@gmail.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/eya-ehkd-nav
+X-MICROSOFT-CDO-OWNERAPPTID:-1660099917
+CREATED:20240403T040026Z
+DESCRIPTION:-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~::~:~::-\nTham gia qua Google Meet: https://meet.google.com
+ /eya-ehkd-nav\nHoặc gọi điện đến số: (US) +1 402-780-1594 Mã PIN: 296514440
+ #\nCác số điện thoại khác: https://tel.meet/eya-ehkd-nav?pin=6210219510441&
+ hs=7\n\nTìm hiểu thêm về Meet tại: https://support.google.com/a/users/answe
+ r/9282720\n\nVui lòng đừng chỉnh sửa mục này.\n-::~:~::~:~:~:~:~:~:~:~:~:~:
+ ~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20240403T040026Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:LHDD_K8_CLB Thiền_Buổi phỏng vấn
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

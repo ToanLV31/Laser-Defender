@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,10 +14,26 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField][Range(0f, 1f)] float volumeDamage = 1f;
 
 
+    static AudioPlayer instance;
 
-    private AudioSource audioSource;
+    void Awake()
+    {
+        ManageSingleton();
+    }
 
-
+    private void ManageSingleton()
+    {
+        if (instance != null)
+        {
+            gameObject.SetActive(false);
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(instance);
+        }
+    }
 
     void Start()
     {
@@ -42,15 +59,6 @@ public class AudioPlayer : MonoBehaviour
         }
     }
 
-    public void PlayBackGroundAudio(AudioClip audioClip, float volume)
-    {
-        if (audioClip != null)
-        {
-            audioSource.clip = audioClip;
-            audioSource.volume = volume;
-            audioSource.loop = true;
-            audioSource.Play();
-        }
-    }
+
 
 }
