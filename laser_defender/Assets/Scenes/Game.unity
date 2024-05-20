@@ -643,7 +643,10 @@ MonoBehaviour:
   listWave:
   - {fileID: 11400000, guid: aea975f288edf1547bf8e77202c18512, type: 2}
   - {fileID: 11400000, guid: 13367133d019efb418a483ea7c0228e0, type: 2}
+  - {fileID: 11400000, guid: 184d0de93eb6ae446953323e77c8d33e, type: 2}
   - {fileID: 11400000, guid: aea975f288edf1547bf8e77202c18512, type: 2}
+  - {fileID: 11400000, guid: 184d0de93eb6ae446953323e77c8d33e, type: 2}
+  - {fileID: 11400000, guid: 184d0de93eb6ae446953323e77c8d33e, type: 2}
   timeBetweenWave: 0.4
   isLooping: 1
 --- !u!4 &1523390743

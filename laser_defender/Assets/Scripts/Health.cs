@@ -18,6 +18,7 @@ public class Health : MonoBehaviour
     [SerializeField] bool applyShakeCamera;
 
     [SerializeField] bool isEnemy;
+    [SerializeField] bool isPlayer;
 
 
     CameraShake cameraShake;
@@ -71,8 +72,8 @@ public class Health : MonoBehaviour
         DamageDealer damageDealer = other.GetComponent<DamageDealer>();
         if (damageDealer != null)
         {
-            // Debug.Log("Blood:" + health);
             TakeDamage(damageDealer.GetDamage());
+
             PlayHitEffect();
             if (audioPlayer)
             {
@@ -82,8 +83,10 @@ public class Health : MonoBehaviour
             {
                 ShakeCamera();
             }
-            damageDealer.Hit();
 
+            if(!isEnemy && !isPlayer){
+                 damageDealer.Hit();
+            }
         }
     }
 
@@ -91,7 +94,6 @@ public class Health : MonoBehaviour
     {
         if (cameraShake != null)
         {
-
             StartCoroutine(cameraShake.Shake());
         }
     }
@@ -99,10 +101,9 @@ public class Health : MonoBehaviour
     void TakeDamage(int damage)
     {
         health -= damage;
-        // ui.SetHeathSlide((float)currentHealth / 10);
+        
         if (health <= 0)
         {
-
             Die();
         }
     }
@@ -112,13 +113,15 @@ public class Health : MonoBehaviour
         if (isEnemy)
         {
             scoreKeeper.IncreaseCurrentScore(score);
-            Debug.Log("Điểm số hiện tại" + scoreKeeper.GetCurrentScore());
         }
-        else
+        
+        if(isPlayer)
         {
             screenController.LoadGameOverScene();
             Debug.Log("Điểm số sau khi reset" + scoreKeeper.GetCurrentScore());
         }
+
+
         Destroy(gameObject);
     }
 
